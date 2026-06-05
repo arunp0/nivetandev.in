@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>NIVETAN — Tech Gaming Studio</title>
-<meta name="description" content="Nivetan is an independent tech-gaming studio engineering high-velocity games, real-time worlds, and the tools that power them." />
+<title>NIVETAN — Indie Game Studio</title>
+<meta name="description" content="Nivetan is a small independent game studio. Our first title is 3D Tic-Tac-Toe — a fully offline N×N×N tic-tac-toe game for Android where you play against an AI opponent." />
 <meta name="theme-color" content="#0a0a0f" />
-<meta property="og:title" content="NIVETAN — Tech Gaming Studio" />
-<meta property="og:description" content="We engineer high-velocity games, real-time worlds, and the tools that power them." />
+<meta property="og:title" content="NIVETAN — Indie Game Studio" />
+<meta property="og:description" content="Makers of 3D Tic-Tac-Toe, a fully offline N×N×N tic-tac-toe game for Android, played against an AI opponent." />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://nivetandev.in" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -121,26 +121,33 @@ section{position:relative;z-index:2;padding:110px 0}
 .sec-head h2{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(32px,5vw,60px);line-height:1;letter-spacing:-.02em;text-transform:uppercase;max-width:680px}
 .sec-head p{color:var(--ink-dim);max-width:330px;font-size:15px}
 
-/* ===== games ===== */
-.games{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{
-  position:relative;border:1px solid var(--line);border-radius:6px;overflow:hidden;
-  background:linear-gradient(160deg,var(--bg-2),#0b0b12);min-height:340px;padding:26px;
-  display:flex;flex-direction:column;justify-content:flex-end;transition:transform .3s,border-color .3s;
+/* ===== featured game ===== */
+.feature{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:0;
+  border:1px solid var(--line);border-radius:10px;overflow:hidden;
+  background:linear-gradient(160deg,var(--bg-2),#0b0b12);
 }
-.card:hover{transform:translateY(-6px);border-color:rgba(196,248,42,.4)}
-.card .num{position:absolute;top:22px;right:24px;font-family:'Space Mono',monospace;font-size:13px;color:var(--ink-dim)}
-.card .orb{position:absolute;top:-40px;left:-40px;width:180px;height:180px;border-radius:50%;filter:blur(50px);opacity:.5;transition:opacity .3s}
-.card:hover .orb{opacity:.85}
-.card .cat{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--lime);margin-bottom:10px}
-.card h3{font-family:'Syne',sans-serif;font-weight:700;font-size:26px;line-height:1.05;margin-bottom:10px}
-.card p{color:var(--ink-dim);font-size:14px}
-.card .meta{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);display:flex;justify-content:space-between;font-family:'Space Mono',monospace;font-size:12px;color:var(--ink-dim)}
-.card .meta .status{color:var(--lime)}
-@media(max-width:980px){.games{grid-template-columns:1fr 1fr}}
-@media(max-width:620px){.games{grid-template-columns:1fr}}
+.feature .info{padding:46px 44px;display:flex;flex-direction:column;justify-content:center}
+.feature .cat{font-family:'Space Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--lime);margin-bottom:14px}
+.feature h3{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(30px,4vw,44px);line-height:1.02;margin-bottom:16px}
+.feature p{color:var(--ink-dim);font-size:15px;max-width:440px}
+.feature .specs{margin:26px 0 30px;display:flex;flex-wrap:wrap;gap:10px}
+.feature .specs span{font-family:'Space Mono',monospace;font-size:12px;color:var(--ink-dim);border:1px solid var(--line);border-radius:999px;padding:6px 13px}
+.feature .actions{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.feature .status{font-family:'Space Mono',monospace;font-size:12px;color:var(--lime);letter-spacing:.04em}
+/* visual: a stylised 3D board */
+.feature .visual{
+  position:relative;min-height:380px;border-left:1px solid var(--line);overflow:hidden;
+  background:radial-gradient(80% 80% at 70% 20%,rgba(123,92,255,.16),transparent 60%),linear-gradient(160deg,#0c0c14,#080810);
+  display:flex;align-items:center;justify-content:center;
+}
+.feature .visual .board{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;transform:rotateX(52deg) rotateZ(45deg);transform-style:preserve-3d}
+.feature .visual .cell{width:54px;height:54px;border:1px solid rgba(196,248,42,.25);border-radius:6px;background:rgba(255,255,255,.02);display:flex;align-items:center;justify-content:center;font-family:'Syne',sans-serif;font-weight:800;font-size:26px}
+.feature .visual .cell.x{color:var(--lime);text-shadow:0 0 18px rgba(196,248,42,.5)}
+.feature .visual .cell.o{color:var(--magenta);text-shadow:0 0 18px rgba(255,61,129,.45)}
+@media(max-width:860px){.feature{grid-template-columns:1fr}.feature .visual{border-left:0;border-top:1px solid var(--line);min-height:300px}.feature .info{padding:36px 28px}}
 
-/* ===== capabilities ===== */
+/* ===== capabilities / features ===== */
 .caps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);border-radius:6px;overflow:hidden}
 .cap{padding:36px 28px;border-right:1px solid var(--line);transition:background .3s}
 .cap:last-child{border-right:0}
@@ -179,10 +186,10 @@ footer{border-top:1px solid var(--line);padding:60px 0 40px;position:relative;z-
   <div class="wrap nav">
     <a href="#" class="logo"><span class="dot"></span>NIVE<b>TAN</b></a>
     <nav class="nav-links">
-      <a href="#games">Games</a>
-      <a href="#build">Engine</a>
+      <a href="#game">Game</a>
+      <a href="#features">Features</a>
       <a href="#studio">Studio</a>
-      <a href="#join" class="btn btn-fill">Join Us</a>
+      <a href="#play" class="btn btn-fill">Get the Game</a>
     </nav>
   </div>
 </header>
@@ -192,103 +199,101 @@ footer{border-top:1px solid var(--line);padding:60px 0 40px;position:relative;z-
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <span class="tag reveal">Independent Tech-Gaming Studio</span>
+        <span class="tag reveal">Independent Game Studio</span>
         <h1 class="reveal" style="margin-top:22px">
-          <span class="glow">Build</span> worlds<br>
-          that <span class="stroke">refuse</span><br>
-          to <span class="glow">stand still.</span>
+          <span class="glow">Three</span> in a row<br>
+          just got a<br>
+          <span class="glow">third</span> <span class="stroke">dimension.</span>
         </h1>
-        <p class="lead reveal">Nivetan engineers high-velocity games, real-time multiplayer worlds, and the bespoke tooling that powers them — from first prototype to live service.</p>
+        <p class="lead reveal">Nivetan is a small indie studio. Our first game, <strong>3D Tic-Tac-Toe</strong>, takes the classic grid into an N×N×N cube — play it anywhere, fully offline, against an AI that actually thinks ahead.</p>
         <div class="hero-cta reveal">
-          <a href="#games" class="btn btn-fill">Explore the Lineup</a>
-          <a href="#studio" class="btn btn-ghost">About the Studio</a>
+          <a href="#play" class="btn btn-fill">Get the Game</a>
+          <a href="#game" class="btn btn-ghost">See How It Plays</a>
         </div>
       </div>
       <div class="hero-side reveal">
         <div>
-          <div class="k"><span>4</span>M+</div>
-          <div class="v">Players reached</div>
+          <div class="k"><span>3</span>D</div>
+          <div class="v">N×N×N cube board</div>
         </div>
         <div>
-          <div class="k"><span>12</span>ms</div>
-          <div class="v">Avg. netcode tick</div>
+          <div class="k"><span>vs</span> AI</div>
+          <div class="v">Single-player opponent</div>
         </div>
         <div style="margin-bottom:0">
-          <div class="k"><span>6</span></div>
-          <div class="v">Titles shipped</div>
+          <div class="k"><span>0</span>%</div>
+          <div class="v">Ads · data · internet</div>
         </div>
       </div>
     </div>
   </div>
   <div class="marquee">
     <div>
-      <span>Real-Time <b>/</b></span><span>Multiplayer <b>/</b></span><span>Engine R&amp;D <b>/</b></span><span>Live Ops <b>/</b></span><span>Procedural <b>/</b></span><span>eSports <b>/</b></span>
-      <span>Real-Time <b>/</b></span><span>Multiplayer <b>/</b></span><span>Engine R&amp;D <b>/</b></span><span>Live Ops <b>/</b></span><span>Procedural <b>/</b></span><span>eSports <b>/</b></span>
+      <span>Strategy <b>/</b></span><span>3D Board <b>/</b></span><span>Offline <b>/</b></span><span>vs AI <b>/</b></span><span>No Ads <b>/</b></span><span>Android <b>/</b></span>
+      <span>Strategy <b>/</b></span><span>3D Board <b>/</b></span><span>Offline <b>/</b></span><span>vs AI <b>/</b></span><span>No Ads <b>/</b></span><span>Android <b>/</b></span>
     </div>
   </div>
 </section>
 
-<section id="games">
+<section id="game">
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>The lineup</h2>
-      <p>A slate of titles spanning competitive arenas, sandbox survival, and experimental play.</p>
+      <h2>The game</h2>
+      <p>One game, made with care — not a fake lineup. This is what we ship.</p>
     </div>
-    <div class="games">
-      <article class="card reveal">
-        <div class="orb" style="background:var(--lime)"></div>
-        <div class="num">01</div>
-        <div class="cat">Competitive · FPS</div>
-        <h3>Velocity Run</h3>
-        <p>A momentum-based arena shooter where the floor is never lava — it's faster.</p>
-        <div class="meta"><span>PC · Console</span><span class="status">● Live</span></div>
-      </article>
-      <article class="card reveal">
-        <div class="orb" style="background:var(--violet)"></div>
-        <div class="num">02</div>
-        <div class="cat">Open World · Survival</div>
-        <h3>Hollow Tide</h3>
-        <p>A procedurally drowned world that rebuilds itself every time the servers wake.</p>
-        <div class="meta"><span>PC · Cloud</span><span class="status">● Beta</span></div>
-      </article>
-      <article class="card reveal">
-        <div class="orb" style="background:var(--magenta)"></div>
-        <div class="num">03</div>
-        <div class="cat">Experimental · Co-op</div>
-        <h3>Signal/Noise</h3>
-        <p>A two-player puzzle of broken radio waves — you only win when you listen.</p>
-        <div class="meta"><span>PC · Mobile</span><span class="status" style="color:var(--ink-dim)">◐ In Dev</span></div>
-      </article>
+    <div class="feature reveal">
+      <div class="info">
+        <div class="cat">Strategy · Single-player</div>
+        <h3>3D Tic-Tac-Toe</h3>
+        <p>The tic-tac-toe you know, rebuilt on a 3D N×N×N cube. Lines can run across rows, columns, pillars and diagonals through space — so every move counts. Play against an AI opponent on a board size you choose. No accounts, no ads, no internet required.</p>
+        <div class="specs">
+          <span>Android</span>
+          <span>Offline</span>
+          <span>Free</span>
+          <span>Portrait · one-handed</span>
+        </div>
+        <div class="actions">
+          <a href="https://play.google.com/store/apps/details?id=in.nivetandev.tictactoe3d" class="btn btn-fill" rel="noopener">Get on Google Play</a>
+          <span class="status">◐ Coming Soon</span>
+        </div>
+      </div>
+      <div class="visual" aria-hidden="true">
+        <div class="board">
+          <div class="cell x">X</div><div class="cell"></div><div class="cell o">O</div>
+          <div class="cell"></div><div class="cell x">X</div><div class="cell"></div>
+          <div class="cell o">O</div><div class="cell"></div><div class="cell x">X</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<section id="build">
+<section id="features">
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>Tech that ships</h2>
-      <p>We don't just make games — we build the engine, netcode, and pipeline underneath them.</p>
+      <h2>Built to be simple</h2>
+      <p>A quick game to pick up, with just enough depth to keep you thinking.</p>
     </div>
     <div class="caps reveal">
       <div class="cap">
         <div class="i">[ 01 ]</div>
-        <h4>Custom Netcode</h4>
-        <p>Rollback &amp; authoritative servers tuned for sub-frame fairness at scale.</p>
+        <h4>True 3D Board</h4>
+        <p>An N×N×N cube where winning lines run through space, not just a flat grid.</p>
       </div>
       <div class="cap">
         <div class="i">[ 02 ]</div>
-        <h4>Procedural Worlds</h4>
-        <p>Deterministic generation pipelines that turn a seed into a living place.</p>
+        <h4>Play vs AI</h4>
+        <p>A single-player opponent that plans ahead — no second player or connection needed.</p>
       </div>
       <div class="cap">
         <div class="i">[ 03 ]</div>
-        <h4>Live Operations</h4>
-        <p>Telemetry, A/B economy tuning, and zero-downtime content drops.</p>
+        <h4>Fully Offline</h4>
+        <p>No ads, no accounts, no data collection. The whole game runs on your device.</p>
       </div>
       <div class="cap">
         <div class="i">[ 04 ]</div>
-        <h4>Engine R&amp;D</h4>
-        <p>In-house rendering &amp; physics research, open-sourced where we can.</p>
+        <h4>One-Handed</h4>
+        <p>Portrait layout tuned for quick rounds on the go, on any modern Android phone.</p>
       </div>
     </div>
   </div>
@@ -298,25 +303,25 @@ footer{border-top:1px solid var(--line);padding:60px 0 40px;position:relative;z-
   <div class="wrap">
     <div class="band reveal">
       <span class="tag">The Studio</span>
-      <h2 style="margin-top:18px">A small crew with an unfair obsession for the frame budget.</h2>
-      <p>Founded by engineers and players, Nivetan is a remote-first studio. We prototype fast, kill our darlings faster, and only ship what we'd play at 2&nbsp;a.m. ourselves.</p>
+      <h2 style="margin-top:18px">A tiny indie studio that ships what it actually plays.</h2>
+      <p>Nivetan is a small, independent studio. We'd rather make one game we're proud of than a shelf of half-finished ones — 3D Tic-Tac-Toe is where we're starting. Have feedback or an idea? We read every message.</p>
       <div class="hero-cta">
-        <a href="#join" class="btn btn-fill">See Open Roles</a>
-        <a href="mailto:hello@nivetandev.in" class="btn btn-ghost">hello@nivetandev.in</a>
+        <a href="mailto:hello@nivetandev.in" class="btn btn-fill">hello@nivetandev.in</a>
+        <a href="#play" class="btn btn-ghost">Get the Game</a>
       </div>
     </div>
   </div>
 </section>
 
-<section id="join" style="padding-top:0">
+<section id="play" style="padding-top:0">
   <div class="wrap">
     <div class="sec-head reveal">
-      <h2>Press start<br>with us.</h2>
-      <p>Whether you build engines, design levels, or break things on purpose — we want to hear from you.</p>
+      <h2>Ready<br>to play?</h2>
+      <p>3D Tic-Tac-Toe is built for Android. Grab it, and let us know what you think.</p>
     </div>
     <div class="hero-cta reveal">
-      <a href="mailto:careers@nivetandev.in" class="btn btn-fill">careers@nivetandev.in</a>
-      <a href="#" class="btn btn-ghost">Press Kit</a>
+      <a href="https://play.google.com/store/apps/details?id=in.nivetandev.tictactoe3d" class="btn btn-fill" rel="noopener">Get on Google Play</a>
+      <a href="mailto:hello@nivetandev.in" class="btn btn-ghost">Contact Us</a>
     </div>
   </div>
 </section>
@@ -327,31 +332,28 @@ footer{border-top:1px solid var(--line);padding:60px 0 40px;position:relative;z-
     <div class="foot">
       <div>
         <a href="#" class="logo"><span class="dot"></span>NIVE<b>TAN</b></a>
-        <small>High-velocity games &amp; the tech beneath them.<br>Remote-first · est. 2024</small>
+        <small>A small indie studio.<br>Makers of 3D Tic-Tac-Toe · est. 2024</small>
       </div>
       <div class="foot-links">
         <div class="foot-col">
+          <h5>Game</h5>
+          <a href="#game">3D Tic-Tac-Toe</a>
+          <a href="#features">Features</a>
+          <a href="https://play.google.com/store/apps/details?id=in.nivetandev.tictactoe3d" rel="noopener">Google Play</a>
+        </div>
+        <div class="foot-col">
           <h5>Studio</h5>
-          <a href="#games">Games</a>
-          <a href="#build">Engine</a>
           <a href="#studio">About</a>
-        </div>
-        <div class="foot-col">
-          <h5>Connect</h5>
           <a href="mailto:hello@nivetandev.in">Contact</a>
-          <a href="#join">Careers</a>
-          <a href="#">Press Kit</a>
         </div>
         <div class="foot-col">
-          <h5>Social</h5>
-          <a href="#">Discord</a>
-          <a href="#">YouTube</a>
-          <a href="#">X / Twitter</a>
+          <h5>Legal</h5>
+          <a href="/privacy.html">Privacy Policy</a>
         </div>
       </div>
     </div>
     <div class="foot-bottom">
-      <small>© <span id="yr"></span> Nivetan Studio. All rights reserved.</small>
+      <small>© <span id="yr"></span> Nivetan. All rights reserved.</small>
       <small class="mono">nivetandev.in</small>
     </div>
   </div>

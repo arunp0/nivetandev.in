@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy Policy — NIVETAN</title>
+<meta name="description" content="Privacy policy for 3D Tic-Tac-Toe by Nivetan. The game is fully offline and collects no personal data." />
+<meta name="theme-color" content="#0a0a0f" />
+<meta name="robots" content="index,follow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Space+Mono:wght@400;700&family=Sora:wght@300;400;500&display=swap" rel="stylesheet" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%230a0a0f'/><text x='50' y='72' font-family='monospace' font-size='62' font-weight='bold' text-anchor='middle' fill='%23c4f82a'>N</text></svg>" />
+<style>
+:root{
+  --bg:#0a0a0f;
+  --bg-2:#101018;
+  --ink:#f4f4f0;
+  --ink-dim:#9a9aa6;
+  --lime:#c4f82a;
+  --violet:#7b5cff;
+  --magenta:#ff3d81;
+  --line:rgba(255,255,255,.08);
+  --maxw:820px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Sora',sans-serif;
+  font-weight:300;
+  line-height:1.7;
+  overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+}
+body::before{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:
+    radial-gradient(60% 50% at 80% -5%, rgba(123,92,255,.16), transparent 60%),
+    radial-gradient(50% 45% at 5% 10%, rgba(196,248,42,.10), transparent 60%);
+}
+body::after{
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;position:relative;z-index:2}
+.mono{font-family:'Space Mono',monospace;letter-spacing:.04em}
+
+/* nav */
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(10,10,15,.72);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{max-width:var(--maxw);margin:0 auto;padding:0 28px;display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{font-family:'Syne',sans-serif;font-weight:800;font-size:22px;letter-spacing:-.01em;display:flex;align-items:center;gap:9px;color:var(--ink);text-decoration:none}
+.logo b{color:var(--lime)}
+.logo .dot{width:9px;height:9px;background:var(--lime);border-radius:50%;box-shadow:0 0 14px var(--lime)}
+.nav .back{color:var(--ink-dim);text-decoration:none;font-size:14px;font-family:'Space Mono',monospace;transition:color .2s}
+.nav .back:hover{color:var(--lime)}
+
+/* doc */
+.doc{padding:150px 0 100px}
+.tag{
+  font-family:'Space Mono',monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--lime);display:inline-flex;align-items:center;gap:10px;margin-bottom:18px;
+}
+.tag::before{content:"";width:28px;height:1px;background:var(--lime);display:inline-block}
+.doc h1{font-family:'Syne',sans-serif;font-weight:800;font-size:clamp(40px,7vw,68px);line-height:1;letter-spacing:-.02em;text-transform:uppercase;margin-bottom:14px}
+.doc .updated{font-family:'Space Mono',monospace;font-size:13px;color:var(--ink-dim);margin-bottom:14px}
+.lead-card{
+  border:1px solid rgba(196,248,42,.3);border-radius:10px;padding:26px 28px;margin:30px 0 10px;
+  background:linear-gradient(120deg,rgba(196,248,42,.06),rgba(10,10,15,.2));
+}
+.lead-card strong{color:var(--ink)}
+.doc h2{font-family:'Syne',sans-serif;font-weight:700;font-size:24px;letter-spacing:-.01em;margin:46px 0 14px}
+.doc p{color:var(--ink-dim);font-size:16px;margin-bottom:14px}
+.doc ul{color:var(--ink-dim);font-size:16px;margin:0 0 14px 22px}
+.doc li{margin-bottom:8px}
+.doc a{color:var(--lime);text-decoration:none}
+.doc a:hover{text-decoration:underline}
+.doc strong{color:var(--ink);font-weight:500}
+.meta-list{font-family:'Space Mono',monospace;font-size:13px;color:var(--ink-dim);border:1px solid var(--line);border-radius:8px;padding:20px 24px;margin:18px 0}
+.meta-list div{display:flex;justify-content:space-between;gap:16px;padding:6px 0;border-bottom:1px solid var(--line)}
+.meta-list div:last-child{border-bottom:0}
+.meta-list b{color:var(--ink);font-weight:700}
+
+footer{border-top:1px solid var(--line);padding:40px 0;position:relative;z-index:2}
+.foot-bottom{max-width:var(--maxw);margin:0 auto;padding:0 28px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.foot-bottom small{color:var(--ink-dim);font-family:'Space Mono',monospace;font-size:12px}
+.foot-bottom a{color:var(--ink-dim);text-decoration:none}
+.foot-bottom a:hover{color:var(--lime)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a href="/" class="logo"><span class="dot"></span>NIVE<b>TAN</b></a>
+    <a href="/" class="back">← Back to site</a>
+  </div>
+</header>
+
+<main class="doc">
+  <div class="wrap">
+    <span class="tag">Legal</span>
+    <h1>Privacy Policy</h1>
+    <div class="updated mono">Last updated: June 2026</div>
+
+    <div class="meta-list">
+      <div><span>App</span><b>3D Tic-Tac-Toe</b></div>
+      <div><span>Package</span><b>in.nivetandev.tictactoe3d</b></div>
+      <div><span>Developer</span><b>Nivetan</b></div>
+      <div><span>Platform</span><b>Android</b></div>
+    </div>
+
+    <div class="lead-card">
+      <p style="margin:0"><strong>Short version:</strong> 3D Tic-Tac-Toe does not collect, store, transmit, or share any personal data. The game runs entirely on your device, works fully offline, and contains no ads, no analytics, no accounts, and no in-app purchases.</p>
+    </div>
+
+    <h2>1. Who this applies to</h2>
+    <p>This Privacy Policy applies to the mobile game <strong>3D Tic-Tac-Toe</strong> (package name <span class="mono">in.nivetandev.tictactoe3d</span>), published by Nivetan ("we", "us", "our") on the Google Play Store. By installing or using the game, you agree to this policy.</p>
+
+    <h2>2. Information we collect</h2>
+    <p><strong>We collect no personal data — none.</strong> The game does not ask you to create an account, sign in, or provide any personal information. We do not collect your name, email address, phone number, location, contacts, photos, device identifiers, or any usage or analytics data.</p>
+
+    <h2>3. How the game works</h2>
+    <p>3D Tic-Tac-Toe is a fully offline, single-player game. Everything — including the game logic and the AI opponent — runs locally on your device. The game does not require an internet connection to play, and it does not send any information to us or to any third party.</p>
+    <ul>
+      <li><strong>No ads.</strong> The game contains no advertising and no advertising SDKs.</li>
+      <li><strong>No analytics or tracking.</strong> We do not use any analytics, crash-reporting, or tracking tools.</li>
+      <li><strong>No third-party services.</strong> The game does not integrate Google Play Games Services, social logins, or any other third-party service that would collect data.</li>
+      <li><strong>No in-app purchases.</strong> There is nothing to buy, so no payment information is ever requested or processed.</li>
+    </ul>
+
+    <h2>4. Permissions</h2>
+    <p>The game does not request any Android permission that grants access to your personal information (such as location, camera, microphone, contacts, or storage of your personal files). Any settings or game progress are stored locally on your device and never leave it.</p>
+
+    <h2>5. Children's privacy</h2>
+    <p>Because the game collects no data of any kind, it is suitable for users of all ages, including children. We do not knowingly collect any information from anyone, including children under the age of 13.</p>
+
+    <h2>6. Data sharing and security</h2>
+    <p>We do not collect data, so there is no personal data to share, sell, or disclose to anyone. As nothing is transmitted off your device, there is no server-side data that could be exposed.</p>
+
+    <h2>7. Changes to this policy</h2>
+    <p>If the game ever changes in a way that affects this policy (for example, if a future version adds a feature that handles data), we will update this page and revise the "Last updated" date above before that version is released.</p>
+
+    <h2>8. Contact</h2>
+    <p>If you have any questions about this Privacy Policy, contact us at <a href="mailto:hello@nivetandev.in">hello@nivetandev.in</a>.</p>
+  </div>
+</main>
+
+<footer>
+  <div class="foot-bottom">
+    <small>© <span id="yr"></span> Nivetan. All rights reserved.</small>
+    <small><a href="/">nivetandev.in</a></small>
+  </div>
+</footer>
+
+<script>document.getElementById('yr').textContent = new Date().getFullYear();</script>
+</body>
+</html>
